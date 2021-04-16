@@ -28,4 +28,8 @@ describe("Person", () => {
     expect(person.calculateMarsAge()).toEqual(1.88*person.earthAge);
   });
 
+  test("should correctly calculate person's age in jupiter years", () => {
+    expect(person.calculateJupiterAge()).toEqual(11.86*person.earthAge);
+  });
+
 });
