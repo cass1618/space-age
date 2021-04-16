@@ -1,4 +1,4 @@
-import classObj from "../src/js/object.js";
+import classObj from "../src/js/person.js";
 describe("classObj", () => {
   test("should correctly create an object", () => {
     const object = new classObj("name");
