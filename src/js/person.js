@@ -1,11 +1,13 @@
 export default class Pesron {
-  constructor(name, age) {
+  constructor(name, age, demographic) {
     this.name = name;
     this.earthAge = age;
     this.mercuryAge = 0;
     this.venusAge = 0;
     this.marsAge = 0;
     this.jupiterAge = 0;
+    this.demographic = demographic;
+    this.avgLifeExpectancy = 0;
   }
 
   calculateMercuryAge() {
@@ -31,5 +33,15 @@ export default class Pesron {
     this.jupiterAge = jupiterAge;
     return jupiterAge;
   }
+
+  // determineLifeExpectancy() {
+
+  // }
+
+
+
+  // yearsLeftToLive(planet) {
+
+  // }
 
 }
