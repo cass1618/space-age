@@ -24,4 +24,8 @@ describe("Person", () => {
     expect(person.calculateVenusAge()).toEqual(.62*person.earthAge);
   });
 
+  test("should correctly calculate person's age in mars years", () => {
+    expect(person.calculateMarsAge()).toEqual(1.88*person.earthAge);
+  });
+
 });
