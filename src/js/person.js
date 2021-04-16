@@ -20,4 +20,10 @@ export default class Pesron {
     return venusAge;
   }
 
+  calculateMarsAge() {
+    const marsAge = this.earthAge * 1.88;
+    this.marsAge = marsAge;
+    return marsAge;
+  }
+
 }
