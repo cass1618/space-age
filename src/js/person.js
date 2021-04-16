@@ -14,4 +14,10 @@ export default class Pesron {
     return mercuryAge;
   }
 
+  calculateVenusAge() {
+    const venusAge = this.earthAge * .62;
+    this.venusAge = venusAge;
+    return venusAge;
+  }
+
 }
