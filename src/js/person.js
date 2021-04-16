@@ -26,4 +26,10 @@ export default class Pesron {
     return marsAge;
   }
 
+  calculateJupiterAge() {
+    const jupiterAge = this.earthAge * 11.86;
+    this.jupiterAge = jupiterAge;
+    return jupiterAge;
+  }
+
 }
