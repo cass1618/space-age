@@ -17,8 +17,11 @@ describe("Person", () => {
   });
 
   test("should correctly calculate person's age in mercury years", () => {
-    person = new Person("Name",33);
     expect(person.calculateMercuryAge()).toEqual(.24*person.earthAge);
+  });
+
+  test("should correctly calculate person's age in venus years", () => {
+    expect(person.calculateVenusAge()).toEqual(.62*person.earthAge);
   });
 
 });
