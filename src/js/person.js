@@ -34,14 +34,11 @@ export default class Pesron {
     return jupiterAge;
   }
 
-  // determineLifeExpectancy() {
+  getDemRow() {
+    return Math.floor(this.earthAge/5) +1;
+  }
 
-  // }
 
 
-
-  // yearsLeftToLive(planet) {
-
-  // }
 
 }
