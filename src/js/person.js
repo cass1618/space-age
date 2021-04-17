@@ -92,7 +92,7 @@ export default class Pesron {
   }
 
   roundTwo(number) {
-  
+    return Math.round(number*100)/100;
   }
 
 }
