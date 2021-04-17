@@ -1,4 +1,5 @@
 import Person from "../src/js/person.js";
+
 describe("Person", () => {
   let person = "";
 
@@ -16,6 +17,7 @@ describe("Person", () => {
     expect(person.jupiterAge).toEqual(0);
     expect(person.race).toMatch("other");
     expect(person.gender).toMatch("other");
+    expect(person.lifeExpectency).toEqual(0);
   });
 
   test("should correctly calculate person's age in mercury years", () => {
@@ -40,7 +42,11 @@ describe("Person", () => {
 
   test("should correctly determine column number based on race and gender", () => {
     expect(person.getDemIndex()).toEqual(0);
-  })
+  });
+
+  test("should correctly determine life expectency based on demographic row and column", () => {
+    expect(person.getLifeExpectancy()).toEqual(35);
+  });
 
 
 
