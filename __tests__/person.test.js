@@ -32,7 +32,11 @@ describe("Person", () => {
     expect(person.calculateJupiterAge()).toEqual(11.86*person.earthAge);
   });
   
-  // test("should correctly calulate years person has left to live on each planet", () => {
-  //   expect(person.yearsLeftToLive("earth")).toEqual(72.6-person.earthAge);
-  // });
+  test("should correctly provide a row number based on age", () => {
+    expect(person.getDemRow()).toEqual(7);
+  }); 
+
+
+
+
 });
