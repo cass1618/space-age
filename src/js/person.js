@@ -9,7 +9,7 @@ export default class Pesron {
     this.jupiterAge = 0;
     this.race = race;
     this.gender = gender;
-    this.lifeExpectency = 0;
+    this.lifeExpectency = this.getLifeExpectancy();
   }
 
   calculateMercuryAge() {
@@ -84,7 +84,7 @@ export default class Pesron {
   } 
 
   getLifeExpectancy() {
-    return demographics[this.getDemRow()][this.getDemIndex()];
+    return demographics[this.getDemRow()][this.getDemIndex()] + this.earthAge;
   }
   
 
