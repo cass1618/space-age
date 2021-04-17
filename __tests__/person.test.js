@@ -17,7 +17,7 @@ describe("Person", () => {
     expect(person.jupiterAge).toEqual(0);
     expect(person.race).toMatch("other");
     expect(person.gender).toMatch("other");
-    expect(person.lifeExpectency).toEqual(0);
+    expect(person.lifeExpectency).toEqual(77.6);
   });
 
   test("should correctly calculate person's age in mercury years", () => {
@@ -45,10 +45,14 @@ describe("Person", () => {
   });
 
   test("should correctly determine life expectency based on demographic row and column", () => {
-    expect(person.getLifeExpectancy()).toEqual(35);
+    expect(person.getLifeExpectancy()).toEqual(77.6);
   });
 
+  test("should correctly calculate years left to live on earth", () => {
+    expect(person.yearsLeftEarth()).toEqual(44.6)
+  })
 
-
-
+  test("should correctly round number to 2 decimal places", () => {
+  expect(person.roundTwo(1.234567)).toEqual(1.23);
+  });
 });

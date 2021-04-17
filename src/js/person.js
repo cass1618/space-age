@@ -87,6 +87,13 @@ export default class Pesron {
     return demographics[this.getDemRow()][this.getDemIndex()] + this.earthAge;
   }
   
+  yearsLeftEarth() {
+    return this.roundTwo(this.lifeExpectency - this.earthAge);
+  }
 
+  roundTwo(number) {
+  
+  }
 
 }
+
