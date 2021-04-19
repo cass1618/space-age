@@ -12,13 +12,13 @@ describe("Person", () => {
     expect(person);
     expect(person.name).toMatch("Name");
     expect(person.earthAge).toEqual(33);
-    expect(person.mercuryAge).toEqual(0);
-    expect(person.venusAge).toEqual(0);
-    expect(person.marsAge).toEqual(0);
-    expect(person.jupiterAge).toEqual(0);
+    expect(person.mercuryAge).toEqual(7.92);
+    expect(person.venusAge).toEqual(20.46);
+    expect(person.marsAge).toEqual(62.04);
+    expect(person.jupiterAge).toEqual(391.38);
     expect(person.race).toMatch("other");
     expect(person.gender).toMatch("other");
-    expect(person.lifeExpectency).toEqual(0);
+    expect(person.lifeExpectency).toEqual(77.6);
     expect(person.yearsLeftEarth).toEqual(0);
     expect(person.yearsLeftMercury).toEqual(0);
     expect(person.yearsLeftVenus).toEqual(0);
@@ -100,6 +100,18 @@ describe("getDemIndex()", () => {
     let person1 = new Person(testPeople[i][0], testPeople[i][1], testPeople[i][2], testPeople[i][3]);
     expect(person1.getDemIndex()).toEqual(testPeople[i][4]);
   });
+});
+
+describe("getDemIndex()", () => {
+let person = "";
+  beforeEach(() => {
+    person = new Person("Name",150,"other","other");
+    person.initialize();
+  });
+  test("should correctly calculate years over life expectancy person is", () => {
+  expect(person.calcYearsLeftEarth());  
+  });
+
 });
 
 
