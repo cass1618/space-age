@@ -65,7 +65,7 @@ describe("Person", () => {
   });
 
   test("should correctly determine years left to live on Venus", () => {
-    expect(person.calcYearsLeftVenus()).toEqual(0);
+    expect(person.calcYearsLeftVenus()).toEqual(27.65);
   });
 });
 

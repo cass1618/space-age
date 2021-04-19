@@ -118,6 +118,12 @@ export default
     return yearsLeftMercury;
   }
 
+  calcYearsLeftVenus() {
+    const yearsLeftVenus = this.roundTwo((this.lifeExpectency * .62) - this.venusAge); 
+    this.yearsLeftVenus = yearsLeftVenus;
+    return yearsLeftVenus;
+  }
+
   
 
 }
