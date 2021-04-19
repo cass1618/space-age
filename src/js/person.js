@@ -119,9 +119,9 @@ export default
   }
 
   calcYearsLeftVenus() {
-    // const yearsLeftVenus = this.roundTwo((this.lifeExpectency * .62) - this.venusAge); 
-    // this.yearsLeftVenus = yearsLeftVenus;
-    // return yearsLeftVenus;
+    const yearsLeftVenus = this.roundTwo((this.lifeExpectency * .62) - this.venusAge); 
+    this.yearsLeftVenus = yearsLeftVenus;
+    return yearsLeftVenus;
   }
 
   
