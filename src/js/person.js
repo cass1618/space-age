@@ -130,6 +130,12 @@ export default
     return yearsLeftMars;
   }
 
+  calcYearsLeftJupiter() {
+    const yearsLeftJupiter = this.roundTwo((this.lifeExpectency * 11.86) - this.jupiterAge); 
+    this.yearsLeftJupiter = yearsLeftJupiter;
+    return yearsLeftJupiter;
+  }
+
   
 
 }
