@@ -124,6 +124,12 @@ export default
     return yearsLeftVenus;
   }
 
+  calcYearsLeftMars() {
+    const yearsLeftMars = this.roundTwo((this.lifeExpectency * 1.88) - this.marsAge); 
+    this.yearsLeftMars = yearsLeftMars;
+    return yearsLeftMars;
+  }
+
   
 
 }

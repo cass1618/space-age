@@ -69,7 +69,7 @@ describe("Person", () => {
   });
 
   test("should correctly determine years left to live on Mars", () => {
-    expect(person.calcYearsLeftMars()).toEqual(0);
+    expect(person.calcYearsLeftMars()).toEqual(83.85);
   });
 });
 
