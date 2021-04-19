@@ -5,6 +5,7 @@ describe("Person", () => {
 
   beforeEach(() => {
     person = new Person("Name",33,"other","other");
+    person.initialize();
   });
 
   test("should correctly create a Person object with name", () => {
@@ -18,6 +19,11 @@ describe("Person", () => {
     expect(person.race).toMatch("other");
     expect(person.gender).toMatch("other");
     expect(person.lifeExpectency).toEqual(0);
+    expect(person.yearsLeftEarth).toEqual(0);
+    expect(person.yearsLeftMercury).toEqual(0);
+    expect(person.yearsLeftVenus).toEqual(0);
+    expect(person.yearsLeftMars).toEqual(0);
+    expect(person.yearsLeftJupiter).toEqual(0);
   });
 
   test("should correctly calculate person's age in mercury years", () => {
@@ -40,20 +46,26 @@ describe("Person", () => {
     expect(person.getDemRow()).toEqual(7);
   }); 
 
+  test("should correctly calculate years left to live on earth", () => {
+    expect(person.calcYearsLeftEarth()).toEqual(44.6)
+  });
+
   test("should correctly determine life expectency based on demographic row and column", () => {
     expect(person.getLifeExpectancy()).toEqual(77.6);
   });
 
-  test("should correctly calculate years left to live on earth", () => {
-    expect(person.yearsLeftEarth()).toEqual(44.6)
-  })
+ 
 
   test("should correctly round number to 2 decimal places", () => {
   expect(person.roundTwo(1.234567)).toEqual(1.23);
   });
 
   test("should correctly determine years left to live on Mercury", () => {
-    expect(person.yearsLeftMercury()).toEqual(0);
+    expect(person.calcYearsLeftMercury()).toEqual(10.7);
+  });
+
+  test("should correctly determine years left to live on Venus", () => {
+    expect(person.calcYearsLeftVenus()).toEqual(0);
   });
 });
 
@@ -78,9 +90,7 @@ describe("getDemIndex()", () => {
   test.each(testPeople)("should correctly determine array index based on race and gender", () => {
     i++;
     let person1 = new Person(testPeople[i][0], testPeople[i][1], testPeople[i][2], testPeople[i][3]);
-    console.log(person1);
     expect(person1.getDemIndex()).toEqual(testPeople[i][4]);
-    console.log(person1.getDemIndex());
   });
 });
 

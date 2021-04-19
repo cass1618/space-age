@@ -1,5 +1,6 @@
 import {demographics} from "./demographics.js"
-export default class Pesron {
+export default
+ class Person {
   constructor(name, age, race, gender) {
     this.name = name;
     this.earthAge = age;
@@ -10,6 +11,19 @@ export default class Pesron {
     this.race = race;
     this.gender = gender;
     this.lifeExpectency = 0;
+    this.yearsLeftEarth = 0;
+    this.yearsLeftMercury = 0;
+    this.yearsLeftVenus = 0;
+    this.yearsLeftMars = 0;
+    this.yearsLeftJupiter = 0;
+  }
+
+  initialize() {
+    this.calculateMercuryAge();
+    this.calculateVenusAge();
+    this.calculateMarsAge();
+    this.calculateJupiterAge();
+    this.getLifeExpectancy();
   }
 
   calculateMercuryAge() {
@@ -89,14 +103,22 @@ export default class Pesron {
     return this.lifeExpectency;
   }
   
-  yearsLeftEarth() {
-    this.getLifeExpectancy();
-    return this.roundTwo(this.lifeExpectency - this.earthAge);
-  }
-
   roundTwo(number) {
     return Math.round(number*100)/100;
   }
+
+  calcYearsLeftEarth() {
+    this.yearsLeftEarth = this.roundTwo(this.lifeExpectency - this.earthAge);
+    return this.roundTwo(this.lifeExpectency - this.earthAge);
+  }
+
+  calcYearsLeftMercury() {
+    const yearsLeftMercury = this.roundTwo((this.lifeExpectency * .24) - this.mercuryAge); 
+    this.yearsLeftMercury = yearsLeftMercury;
+    return yearsLeftMercury;
+  }
+
+  
 
 }
 
