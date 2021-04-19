@@ -51,6 +51,10 @@ describe("Person", () => {
   test("should correctly round number to 2 decimal places", () => {
   expect(person.roundTwo(1.234567)).toEqual(1.23);
   });
+
+  test("should correctly determine years left to live on Mercury", () => {
+    expect(person.yearsLeftMercury()).toEqual(0);
+  });
 });
 
 describe("getDemIndex()", () => {
