@@ -71,6 +71,10 @@ describe("Person", () => {
   test("should correctly determine years left to live on Mars", () => {
     expect(person.calcYearsLeftMars()).toEqual(83.85);
   });
+
+  test("should correctly determine years left to live on Jupiter", () => {
+    expect(person.calcYearsLeftJupiter()).toEqual(0);
+  });
 });
 
 describe("getDemIndex()", () => {
