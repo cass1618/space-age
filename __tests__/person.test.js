@@ -17,7 +17,7 @@ describe("Person", () => {
     expect(person.jupiterAge).toEqual(0);
     expect(person.race).toMatch("other");
     expect(person.gender).toMatch("other");
-    expect(person.lifeExpectency).toEqual(77.6);
+    expect(person.lifeExpectency).toEqual(0);
   });
 
   test("should correctly calculate person's age in mercury years", () => {
@@ -40,10 +40,6 @@ describe("Person", () => {
     expect(person.getDemRow()).toEqual(7);
   }); 
 
-  test("should correctly determine column number based on race and gender", () => {
-    expect(person.getDemIndex()).toEqual(0);
-  });
-
   test("should correctly determine life expectency based on demographic row and column", () => {
     expect(person.getLifeExpectancy()).toEqual(77.6);
   });
@@ -56,3 +52,32 @@ describe("Person", () => {
   expect(person.roundTwo(1.234567)).toEqual(1.23);
   });
 });
+
+describe("getDemIndex()", () => {
+  const testPeople = [
+    ['Name1', 5, "other", "other", 0],
+    ['Name2', 10, "other", "male", 1],
+    ['Name3', 15, "other", "female", 2],
+    ['Name4', 20, "hispanic", "other", 3],
+    ['Name5', 25, "hispanic", "male", 4],
+    ['Name6', 30, "hispanic", "female", 5],
+    ['Name7', 35, "white", "other", 6],
+    ['Name8', 40, "white", "male", 7],
+    ['Name9', 45, "white", "female", 8],
+    ['Name10', 50, "black", "other", 9],
+    ['Name11', 55, "black", "male", 10],
+    ['Name12', 60, "black", "female", 11],
+    ['Name12', 60, "none", "female", undefined],
+  ];
+
+  let i = -1;
+  test.each(testPeople)("should correctly determine array index based on race and gender", () => {
+    i++;
+    let person1 = new Person(testPeople[i][0], testPeople[i][1], testPeople[i][2], testPeople[i][3]);
+    console.log(person1);
+    expect(person1.getDemIndex()).toEqual(testPeople[i][4]);
+    console.log(person1.getDemIndex());
+  });
+});
+
+

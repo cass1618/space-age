@@ -9,7 +9,7 @@ export default class Pesron {
     this.jupiterAge = 0;
     this.race = race;
     this.gender = gender;
-    this.lifeExpectency = this.getLifeExpectancy();
+    this.lifeExpectency = 0;
   }
 
   calculateMercuryAge() {
@@ -70,7 +70,7 @@ export default class Pesron {
           return 8;
       }
       case ("black"):
-        switch(gender) {
+        switch(this.gender) {
           case ("other"):
             return 9;
           case ("male"):
@@ -84,10 +84,13 @@ export default class Pesron {
   } 
 
   getLifeExpectancy() {
-    return demographics[this.getDemRow()][this.getDemIndex()] + this.earthAge;
+    let lifeExpectency = demographics[this.getDemRow()][this.getDemIndex()] + this.earthAge;
+    this.lifeExpectency = lifeExpectency;
+    return this.lifeExpectency;
   }
   
   yearsLeftEarth() {
+    this.getLifeExpectancy();
     return this.roundTwo(this.lifeExpectency - this.earthAge);
   }
 
