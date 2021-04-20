@@ -123,11 +123,11 @@ let person = "";
       });
 
       test("should correctly calculate years over life expectancy person is on Mars", () => {
-        expect(person.calcYearsLeftMars()).toEqual(225.08);  
+        expect(person.calcYearsLeftMars()).toEqual(109.42);  
         });
 
         test("should correctly calculate years over life expectancy person is on Jupiter", () => {
-          expect(person.calcYearsLeftJupiter()).toEqual(0);  
+          expect(person.calcYearsLeftJupiter()).toEqual(690.25);  
           });
 
 

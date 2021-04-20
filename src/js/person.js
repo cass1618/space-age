@@ -171,16 +171,22 @@ export default
     this.yearsLeftMars = yearsLeftMars;
     return yearsLeftMars;
     } else {
-      const yearsPastMars = this.roundTwo(this.marsAge - (this.lifeExpectancy * .62));
+      const yearsPastMars = this.roundTwo(this.marsAge - (this.lifeExpectancy * 1.88));
       this.yearsPastMars = yearsPastMars;
       return yearsPastMars;
     }
   }
 
   calcYearsLeftJupiter() {
+    if (this.pastLifeExpectancy === false) {
     const yearsLeftJupiter = this.roundTwo((this.lifeExpectancy * 11.86) - this.jupiterAge); 
     this.yearsLeftJupiter = yearsLeftJupiter;
     return yearsLeftJupiter;
+    } else {
+      const yearsPastJupiter = this.roundTwo(this.jupiterAge - (this.lifeExpectancy * 11.86));
+      this.yearsPastJupiter = yearsPastJupiter;
+      return yearsPastJupiter;
+    }
   }
 
   
