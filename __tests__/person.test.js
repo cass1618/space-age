@@ -18,7 +18,7 @@ describe("Person", () => {
     expect(person.jupiterAge).toEqual(391.38);
     expect(person.race).toMatch("other");
     expect(person.gender).toMatch("other");
-    expect(person.lifeExpectency).toEqual(77.6);
+    expect(person.lifeExpectancy).toEqual(77.6);
     expect(person.yearsLeftEarth).toEqual(0);
     expect(person.yearsLeftMercury).toEqual(0);
     expect(person.yearsLeftVenus).toEqual(0);
@@ -50,7 +50,7 @@ describe("Person", () => {
     expect(person.calcYearsLeftEarth()).toEqual(44.6)
   });
 
-  test("should correctly determine life expectency based on demographic row and column", () => {
+  test("should correctly determine life expectancy based on demographic row and column", () => {
     expect(person.getLifeExpectancy()).toEqual(77.6);
   });
 
@@ -107,10 +107,12 @@ let person = "";
   beforeEach(() => {
     person = new Person("Name",150,"other","other");
     person.initialize();
+    // console.log(person);
   });
   test("should correctly calculate years over life expectancy person is", () => {
-  expect(person.calcYearsLeftEarth());  
+  expect(person.calcYearsLeftEarth()).toEqual(58.2);  
   });
+
 
 });
 

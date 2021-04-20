@@ -10,12 +10,18 @@ export default
     this.jupiterAge = 0;
     this.race = race;
     this.gender = gender;
-    this.lifeExpectency = 0;
+    this.lifeExpectancy = 0;
     this.yearsLeftEarth = 0;
     this.yearsLeftMercury = 0;
     this.yearsLeftVenus = 0;
     this.yearsLeftMars = 0;
     this.yearsLeftJupiter = 0;
+    this.pastLifeExpectancy = false;
+    this.yearsPastEarth = 0;
+    this.yearsPastMercury = 0;
+    this.yearsPastVenus = 0;
+    this.yearsPastMars = 0;
+    this.yearsPastJupiter = 0;
   }
 
   initialize() {
@@ -23,6 +29,7 @@ export default
     this.calculateVenusAge();
     this.calculateMarsAge();
     this.calculateJupiterAge();
+    this.determineIfPastExpectancy();
     this.getLifeExpectancy();
   }
 
@@ -48,6 +55,17 @@ export default
     const jupiterAge = this.earthAge * 11.86;
     this.jupiterAge = jupiterAge;
     return jupiterAge;
+  }
+
+  determineIfPastExpectancy() {
+    this.getDemRow();
+    const lifeExpectancyFor85 = demographics[17][this.getDemIndex()] + 85;
+    if (this.earthAge > lifeExpectancyFor85) {
+      this.pastLifeExpectancy = true;
+      return true;
+    } else {
+      return false;
+    }
   }
 
   getDemRow() {
@@ -98,9 +116,15 @@ export default
   } 
 
   getLifeExpectancy() {
-    let lifeExpectency = demographics[this.getDemRow()][this.getDemIndex()] + this.earthAge;
-    this.lifeExpectency = lifeExpectency;
-    return this.lifeExpectency;
+    if (this.pastLifeExpectancy === false) {
+    let lifeExpectancy = demographics[this.getDemRow()][this.getDemIndex()] + this.earthAge;
+    this.lifeExpectancy = lifeExpectancy;
+    return this.lifeExpectancy;
+    } else {
+      let lifeExpectancy = demographics[17][this.getDemIndex()] + 85;
+      this.lifeExpectancy = lifeExpectancy;
+      return this.lifeExpectancy;
+    }
   }
   
   roundTwo(number) {
@@ -108,30 +132,35 @@ export default
   }
 
   calcYearsLeftEarth() {
-    this.yearsLeftEarth = this.roundTwo(this.lifeExpectency - this.earthAge);
-    return this.roundTwo(this.lifeExpectency - this.earthAge);
+    if (this.pastLifeExpectancy === false) {
+    this.yearsLeftEarth = this.roundTwo(this.lifeExpectancy - this.earthAge);
+    return this.yearsLeftEarth;
+    } else {
+      this.yearsPastEarth = this.roundTwo(this.earthAge - this.lifeExpectancy);
+    return this.yearsPastEarth;
+    }
   }
 
   calcYearsLeftMercury() {
-    const yearsLeftMercury = this.roundTwo((this.lifeExpectency * .24) - this.mercuryAge); 
+    const yearsLeftMercury = this.roundTwo((this.lifeExpectancy * .24) - this.mercuryAge); 
     this.yearsLeftMercury = yearsLeftMercury;
     return yearsLeftMercury;
   }
 
   calcYearsLeftVenus() {
-    const yearsLeftVenus = this.roundTwo((this.lifeExpectency * .62) - this.venusAge); 
+    const yearsLeftVenus = this.roundTwo((this.lifeExpectancy * .62) - this.venusAge); 
     this.yearsLeftVenus = yearsLeftVenus;
     return yearsLeftVenus;
   }
 
   calcYearsLeftMars() {
-    const yearsLeftMars = this.roundTwo((this.lifeExpectency * 1.88) - this.marsAge); 
+    const yearsLeftMars = this.roundTwo((this.lifeExpectancy * 1.88) - this.marsAge); 
     this.yearsLeftMars = yearsLeftMars;
     return yearsLeftMars;
   }
 
   calcYearsLeftJupiter() {
-    const yearsLeftJupiter = this.roundTwo((this.lifeExpectency * 11.86) - this.jupiterAge); 
+    const yearsLeftJupiter = this.roundTwo((this.lifeExpectancy * 11.86) - this.jupiterAge); 
     this.yearsLeftJupiter = yearsLeftJupiter;
     return yearsLeftJupiter;
   }
