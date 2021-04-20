@@ -166,9 +166,15 @@ export default
   }
 
   calcYearsLeftMars() {
+    if (this.pastLifeExpectancy === false) {
     const yearsLeftMars = this.roundTwo((this.lifeExpectancy * 1.88) - this.marsAge); 
     this.yearsLeftMars = yearsLeftMars;
     return yearsLeftMars;
+    } else {
+      const yearsPastMars = this.roundTwo(this.marsAge - (this.lifeExpectancy * .62));
+      this.yearsPastMars = yearsPastMars;
+      return yearsPastMars;
+    }
   }
 
   calcYearsLeftJupiter() {
