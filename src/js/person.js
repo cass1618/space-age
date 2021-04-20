@@ -154,9 +154,15 @@ export default
   }
 
   calcYearsLeftVenus() {
+    if (this.pastLifeExpectancy === false) {
     const yearsLeftVenus = this.roundTwo((this.lifeExpectancy * .62) - this.venusAge); 
     this.yearsLeftVenus = yearsLeftVenus;
     return yearsLeftVenus;
+    } else {
+      const yearsPastVenus = this.roundTwo(this.venusAge - (this.lifeExpectancy * .62));
+      this.yearsPastVenus = yearsPastVenus;
+      return yearsPastVenus;
+    }
   }
 
   calcYearsLeftMars() {
