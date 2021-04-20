@@ -188,8 +188,5 @@ export default
       return yearsPastJupiter;
     }
   }
-
-  
-
 }
 

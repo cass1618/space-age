@@ -54,8 +54,6 @@ describe("Person", () => {
     expect(person.getLifeExpectancy()).toEqual(77.6);
   });
 
- 
-
   test("should correctly round number to 2 decimal places", () => {
   expect(person.roundTwo(1.234567)).toEqual(1.23);
   });
@@ -115,22 +113,20 @@ let person = "";
   });
 
   test("should correctly calculate years over life expectancy person is on Mercury", () => {
-    expect(person.calcYearsLeftMercury()).toEqual(13.97);  
-    });
+  expect(person.calcYearsLeftMercury()).toEqual(13.97);  
+  });
 
-    test("should correctly calculate years over life expectancy person is on Venus", () => {
-      expect(person.calcYearsLeftVenus()).toEqual(36.08);  
-      });
+  test("should correctly calculate years over life expectancy person is on Venus", () => {
+  expect(person.calcYearsLeftVenus()).toEqual(36.08);  
+  });
 
-      test("should correctly calculate years over life expectancy person is on Mars", () => {
-        expect(person.calcYearsLeftMars()).toEqual(109.42);  
-        });
+  test("should correctly calculate years over life expectancy person is on Mars", () => {
+  expect(person.calcYearsLeftMars()).toEqual(109.42);  
+  });
 
-        test("should correctly calculate years over life expectancy person is on Jupiter", () => {
-          expect(person.calcYearsLeftJupiter()).toEqual(690.25);  
-          });
-
-
+  test("should correctly calculate years over life expectancy person is on Jupiter", () => {
+  expect(person.calcYearsLeftJupiter()).toEqual(690.25);  
+  });
 });
 
 
