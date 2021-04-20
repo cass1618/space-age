@@ -126,6 +126,10 @@ let person = "";
         expect(person.calcYearsLeftMars()).toEqual(225.08);  
         });
 
+        test("should correctly calculate years over life expectancy person is on Jupiter", () => {
+          expect(person.calcYearsLeftJupiter()).toEqual(0);  
+          });
+
 
 });
 
