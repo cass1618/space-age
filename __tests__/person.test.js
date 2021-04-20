@@ -110,13 +110,17 @@ let person = "";
     // console.log(person);
   });
 
-  test("should correctly calculate years over life expectancy person is on earth", () => {
+  test("should correctly calculate years over life expectancy person is on Earth", () => {
   expect(person.calcYearsLeftEarth()).toEqual(58.2);  
   });
 
-  test("should correctly calculate years over life expectancy person is on mercury", () => {
+  test("should correctly calculate years over life expectancy person is on Mercury", () => {
     expect(person.calcYearsLeftMercury()).toEqual(13.97);  
     });
+
+    test("should correctly calculate years over life expectancy person is on Venus", () => {
+      expect(person.calcYearsLeftVenus()).toEqual(0);  
+      });
 
 
 });
