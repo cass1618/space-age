@@ -142,9 +142,15 @@ export default
   }
 
   calcYearsLeftMercury() {
+    if (this.pastLifeExpectancy === false) {
     const yearsLeftMercury = this.roundTwo((this.lifeExpectancy * .24) - this.mercuryAge); 
     this.yearsLeftMercury = yearsLeftMercury;
     return yearsLeftMercury;
+    } else {
+      const yearsPastMercury = this.roundTwo(this.mercuryAge - (this.lifeExpectancy * .24));
+      this.yearsPastMercury = yearsPastMercury;
+      return yearsPastMercury;
+    }
   }
 
   calcYearsLeftVenus() {

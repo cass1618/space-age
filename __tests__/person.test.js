@@ -115,7 +115,7 @@ let person = "";
   });
 
   test("should correctly calculate years over life expectancy person is on mercury", () => {
-    expect(person.calcYearsLeftMercury()).toEqual(58.2);  
+    expect(person.calcYearsLeftMercury()).toEqual(13.97);  
     });
 
 
