@@ -1,5 +1,7 @@
-export
-let demographics = [
+// Years left to live statistics from https://www.cdc.gov/nchs/data/vsrr/VSRR10-508.pdf 
+// Rows are age starting and 5 and incrementing by 5 up to 85
+// Indexes alternate between all, male, female and the first 3 are all origins, next 3 hispanic, then non-hispanic white, non-hispanic black
+export let demographics = [
 [77.8, 75.1, 80.5, 79.9, 76.6, 83.3 ,78.0, 75.5, 80.6, 72.0, 68.3 ,75.8],
 [73.3, 70.6, 76.0, 75.4, 72.1, 78.8, 73.4, 71.0, 75.9, 67.9, 64.2, 71.6],
 [68.3, 65.6, 71.0, 70.4, 67.1, 73.8, 68.4, 66.0, 71.0, 63.0, 59.3, 66.7],

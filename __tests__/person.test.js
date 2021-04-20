@@ -102,16 +102,21 @@ describe("getDemIndex()", () => {
   });
 });
 
-describe("getDemIndex()", () => {
+describe("Person past life expectancy", () => {
 let person = "";
   beforeEach(() => {
     person = new Person("Name",150,"other","other");
     person.initialize();
     // console.log(person);
   });
-  test("should correctly calculate years over life expectancy person is", () => {
+
+  test("should correctly calculate years over life expectancy person is on earth", () => {
   expect(person.calcYearsLeftEarth()).toEqual(58.2);  
   });
+
+  test("should correctly calculate years over life expectancy person is on mercury", () => {
+    expect(person.calcYearsLeftMercury()).toEqual(58.2);  
+    });
 
 
 });

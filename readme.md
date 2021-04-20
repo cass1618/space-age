@@ -6,12 +6,12 @@ This Javascript program creates an object of a person and calculates what their 
 
 ## Technologies Used
 
-* Javscript
+* JavaScript
 * Jest
 
 ## Setup Instructions
 
-The intention of this program is to acheive full coverage testing using Jest.  To perform tests on this application you will need to have node and Jest installed.
+The intention of this program is to achieve full coverage testing using Jest.  To perform tests on this application you will need to have node and Jest installed.
 1. If you do not have homebrew installed, enter the following command in your home directory of terminal:
 ```sh
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
